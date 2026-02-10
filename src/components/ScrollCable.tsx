@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 
-const CONNECTOR_BODY_HEIGHT = 44; // Total height of the visible connector part in SVG
-const INSERTION_DEPTH = 12; // Pixels to insert into the port
+const CONNECTOR_BODY_HEIGHT = 50; // Total connector height in the SVG
+const INSERTION_DEPTH = 8; // How much the tip enters the female port
+const OVERSHOOT_GUARD = 6; // Safety margin to avoid visual over-extension
 
 const ScrollCable: React.FC = () => {
     const { scrollYProgress } = useScroll();
@@ -17,24 +18,22 @@ const ScrollCable: React.FC = () => {
         const portRect = port.getBoundingClientRect();
         const portAbsY = portRect.top + window.scrollY;
         const portViewportYAtBottom = portAbsY - totalScrollableHeight;
-        const targetHeight = portViewportYAtBottom + INSERTION_DEPTH - CONNECTOR_BODY_HEIGHT;
-
-        setMaxCableHeight(targetHeight);
+        const targetHeight = portViewportYAtBottom + INSERTION_DEPTH - CONNECTOR_BODY_HEIGHT - OVERSHOOT_GUARD;
+        setMaxCableHeight(Math.max(0, targetHeight));
     }, []);
 
     useEffect(() => {
         const timer = setTimeout(recalculate, 500);
         window.addEventListener('resize', recalculate);
-        window.addEventListener('scroll', recalculate);
         return () => {
             clearTimeout(timer);
             window.removeEventListener('resize', recalculate);
-            window.removeEventListener('scroll', recalculate);
         };
     }, [recalculate]);
 
-    // Height of the cable line
-    const height = useTransform(scrollYProgress, [0, 1], [0, maxCableHeight]);
+    const clampedScrollProgress = useTransform(scrollYProgress, (value) => Math.min(1, Math.max(0, value)));
+    // Height of the cable line (hard-clamped to avoid elastic overscroll artifacts)
+    const height = useTransform(clampedScrollProgress, (value) => value * maxCableHeight);
 
     // Audio helper using Web Audio API to simulate a classic RJ45 plastic click
     const playClickSound = useCallback(() => {
@@ -73,7 +72,7 @@ const ScrollCable: React.FC = () => {
     }, []);
 
     // Dispatch connection event
-    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    useMotionValueEvent(clampedScrollProgress, "change", (latest) => {
         if (latest >= 0.999 && !hasConnected) {
             setHasConnected(true);
             playClickSound();
@@ -85,7 +84,7 @@ const ScrollCable: React.FC = () => {
     });
 
     return (
-        <div className="fixed top-0 right-[60px] translate-x-1/2 z-[40] pointer-events-none hidden lg:block overflow-visible">
+        <div className="fixed top-0 right-[60px] translate-x-1/2 z-[9999] pointer-events-none hidden lg:block overflow-visible">
             {/* Organic Curved Cable using SVG */}
             <svg
                 width="60"
