@@ -1,40 +1,116 @@
-import React from 'react';
-import { Github, ExternalLink, Code, Layers, Server } from 'lucide-react';
+import { Github, ExternalLink, Layers } from 'lucide-react';
 
 const projects = [
     {
-        title: 'Enterprise Analytics Dashboard',
-        description: 'Plataforma de visualización de datos en tiempo real para métricas empresariales críticas. Redujo el tiempo de generación de reportes en un 80% mediante procesamiento asíncrono.',
-        problem: 'La empresa necesitaba monitorear KPIs en tiempo real desde múltiples fuentes de datos dispares.',
-        tech: ['React', 'TypeScript', 'D3.js', 'Node.js', 'GraphQL'],
-        role: 'Frontend Lead',
-        github: 'https://github.com/julian/analytics',
-        demo: 'https://analytics-demo.julian.dev',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070',
-        type: 'Frontend & Visualization'
+        title: 'EJCO Website',
+        description: 'Official website for EJCO with professional branding and company information.',
+        problem: 'Deliver a clear digital presence and an easy way for visitors to discover services.',
+        tech: ['Web', 'UI/UX', 'Business Site'],
+        role: 'Web Developer',
+        github: null,
+        demo: 'https://www.ejco.com.ar/',
+        image: '/ejco.png',
+        type: 'Website'
     },
     {
-        title: 'Microservices E-commerce API',
-        description: 'Arquitectura de microservicios escalable para gestión de inventario y pedidos de alto volumen. Soporta picos de 10k req/s.',
-        problem: 'Monolito legacy colapsaba bajo alta demanda durante eventos de ventas.',
-        tech: ['Node.js', 'Express', 'Docker', 'Kubernetes', 'Redis', 'PostgreSQL'],
-        role: 'Backend Architect',
-        github: 'https://github.com/julian/ecommerce-api',
+        title: 'NetworkMonitor',
+        description: 'Network monitoring project focused on visibility, diagnostics, and connectivity checks.',
+        problem: 'Track network health and detect issues quickly in a practical, developer-friendly way.',
+        tech: ['Networking', 'Monitoring', 'Automation'],
+        role: 'Developer',
+        github: 'https://github.com/JulianAlconcher/NetworkMonitor',
         demo: null,
-        image: 'https://images.unsplash.com/photo-1558494949-ef526b0042a0?auto=format&fit=crop&q=80&w=2668',
-        type: 'Backend & DevOps'
+        image: '/network.png',
+        type: 'Tooling'
     },
     {
-        title: 'Collaborative Code Editor',
-        description: 'Editor de código colaborativo en tiempo real tipo Google Docs, con ejecución remota y resaltado de sintaxis.',
-        problem: 'Equipos remotos necesitaban una herramienta ligera para pair programming sin configurar entornos locales.',
-        tech: ['Next.js', 'Socket.io', 'Monaco Editor', 'WebRTC', 'AWS Lambda'],
-        role: 'Full Stack Engineer',
-        github: 'https://github.com/julian/collab-editor',
-        demo: 'https://editor.julian.dev',
-        image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=2070',
-        type: 'Full Stack System'
-    }
+        title: 'DuckWallet',
+        description: 'Wallet-oriented project exploring secure account handling and transaction-related flows.',
+        problem: 'Build reliable wallet functionality with a clean and understandable user experience.',
+        tech: ['Fintech', 'Security', 'App Design'],
+        role: 'Developer',
+        github: 'https://github.com/JulianAlconcher/DuckWallet',
+        demo: null,
+        image: '/duck.png',
+        type: 'Application'
+    },
+    {
+        title: 'Ratitas-Bot',
+        description: 'Automation bot project for handling repetitive tasks and command-driven interactions.',
+        problem: 'Reduce manual repetitive actions through scriptable bot behavior.',
+        tech: ['Bot', 'Automation', 'Scripting'],
+        role: 'Developer',
+        github: 'https://github.com/JulianAlconcher/Ratitas-Bot',
+        demo: null,
+        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070',
+        type: 'Bot'
+    },
+    {
+        title: 'Hospitales2000',
+        description: 'Healthcare-oriented software project with focus on management and operational workflows.',
+        problem: 'Support structured processes for hospital-related tasks and data handling.',
+        tech: ['Healthcare', 'Management', 'Software'],
+        role: 'Developer',
+        github: 'https://github.com/JulianAlconcher/Hospitales2000',
+        demo: null,
+        image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=2070',
+        type: 'System'
+    },
+    {
+        title: 'StudyScript',
+        description: 'Utility project designed to improve learning and productivity through scripting.',
+        problem: 'Make studying more efficient with simple automation tools.',
+        tech: ['Education', 'Productivity', 'Scripts'],
+        role: 'Developer',
+        github: 'https://github.com/JulianAlconcher/StudyScript',
+        demo: null,
+        image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=2070',
+        type: 'Utility'
+    },
+    {
+        title: 'GymLAB Proyecto Fisica 2024',
+        description: 'Physics project for GymLAB, combining software support with experiment or simulation workflows.',
+        problem: 'Translate physics concepts into a usable and structured software implementation.',
+        tech: ['Physics', 'Simulation', 'Project'],
+        role: 'Developer',
+        github: 'https://github.com/JulianAlconcher/GymLAB-Proyecto-Fisica-2024',
+        demo: null,
+        image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=2070',
+        type: 'Academic'
+    },
+    {
+        title: 'E-commerce NextJS MovieMerch',
+        description: 'Next.js e-commerce project for movie merchandise with modern storefront patterns.',
+        problem: 'Create a smooth online shopping experience for themed products.',
+        tech: ['Next.js', 'E-commerce', 'Frontend'],
+        role: 'Developer',
+        github: 'https://github.com/JulianAlconcher/E-commerce-NextJS-MovieMerch',
+        demo: null,
+        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=2070',
+        type: 'Web App'
+    },
+    {
+        title: 'Proyecto Sistemas Operativos',
+        description: 'Operating systems project with low-level and systems-focused concepts.',
+        problem: 'Apply operating systems theory in a practical implementation.',
+        tech: ['Operating Systems', 'Systems', 'C/Concepts'],
+        role: 'Developer',
+        github: 'https://github.com/JulianAlconcher/proyecto-Sistemas-Operativos',
+        demo: null,
+        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2070',
+        type: 'Academic'
+    },
+    {
+        title: 'tdp-proyecto-3',
+        description: 'Software development course project focused on implementation quality and teamwork practices.',
+        problem: 'Deliver a complete project under academic constraints and milestones.',
+        tech: ['Software Development', 'Teamwork', 'Architecture'],
+        role: 'Developer',
+        github: 'https://github.com/JulianAlconcher/tdp-proyecto-3',
+        demo: null,
+        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=2070',
+        type: 'Project'
+    },
 ];
 
 const Projects = () => {
@@ -44,8 +120,8 @@ const Projects = () => {
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="mb-16 text-center max-w-3xl mx-auto">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4">Proyectos Destacados</h2>
-                    <p className="text-gray-400 text-lg">Soluciones técnicas a problemas reales. Código limpio, arquitecturas sólidas y enfoque en el usuario.</p>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
+                    <p className="text-gray-400 text-lg">Real projects, practical engineering, and product-focused development.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -76,7 +152,7 @@ const Projects = () => {
                                 </p>
 
                                 <div className="mb-4 p-3 bg-slate-900/50 rounded-lg border border-slate-700/30">
-                                    <h4 className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-1">El Desafío</h4>
+                                    <h4 className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-1">Challenge</h4>
                                     <p className="text-xs text-gray-400 leading-relaxed">
                                         {project.problem}
                                     </p>
@@ -100,12 +176,12 @@ const Projects = () => {
 
                                     <div className="flex items-center gap-3">
                                         {project.github && (
-                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" title="Ver Código">
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" title="View Code">
                                                 <Github size={18} />
                                             </a>
                                         )}
                                         {project.demo && (
-                                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" title="Ver Demo">
+                                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" title="View Live">
                                                 <ExternalLink size={18} />
                                             </a>
                                         )}
@@ -117,8 +193,8 @@ const Projects = () => {
                 </div>
 
                 <div className="mt-16 text-center">
-                    <a href="https://github.com/julian" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors">
-                        Ver más proyectos en GitHub <ExternalLink size={16} className="ml-2" />
+                    <a href="https://github.com/JulianAlconcher" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors">
+                        See more projects on GitHub <ExternalLink size={16} className="ml-2" />
                     </a>
                 </div>
             </div>
