@@ -1,5 +1,4 @@
-import React from 'react';
-import { Database, Code, Layout, Cloud, Smartphone, GitBranch } from 'lucide-react';
+import { Database, Layout, Cloud, GitBranch } from 'lucide-react';
 
 const skills = [
     {
