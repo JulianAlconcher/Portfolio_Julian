@@ -140,23 +140,25 @@ const layoutVariants = [
 ];
 
 const stickerColors = [
-    'bg-lime-300 text-black',
-    'bg-cyan-300 text-black',
-    'bg-amber-300 text-black',
-    'bg-rose-300 text-black',
-    'bg-fuchsia-300 text-black',
-    'bg-emerald-300 text-black',
+    'bg-[#f7f0bf] text-black',
+    'bg-[#c9f2ff] text-black',
+    'bg-[#ffd6b3] text-black',
+    'bg-[#fbd2dd] text-black',
+    'bg-[#dbd6ff] text-black',
+    'bg-[#c8f5d9] text-black',
 ];
 
-const loopWords = ['BUILD', 'SHIP', 'SCALE', 'DEBUG', 'DEPLOY', 'AUTOMATE', 'DESIGN'];
+const stickerAngles = ['rotate-[-2deg]', 'rotate-[1.5deg]', 'rotate-[-1deg]', 'rotate-[2deg]', 'rotate-[-1.5deg]'];
+const tapeAngles = ['rotate-[-10deg]', 'rotate-[8deg]', 'rotate-[-7deg]', 'rotate-[9deg]'];
 
 const Projects = () => {
     return (
-        <section id="projects" className="relative overflow-hidden bg-black py-28 text-white border-t border-white/10">
+        <section id="projects" className="relative overflow-hidden border-t border-black/20 bg-white py-28 text-black">
             <div className="pointer-events-none absolute inset-0">
-                <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-cyan-500/20 blur-[110px]"></div>
-                <div className="absolute right-0 top-1/3 h-80 w-80 rounded-full bg-fuchsia-500/15 blur-[120px]"></div>
-                <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] [background-size:46px_46px]"></div>
+                <div className="absolute inset-0 opacity-35 [background-image:radial-gradient(circle_at_20%_18%,rgba(0,0,0,0.16),transparent_44%),radial-gradient(circle_at_78%_22%,rgba(0,0,0,0.14),transparent_42%),radial-gradient(circle_at_32%_76%,rgba(0,0,0,0.12),transparent_40%),radial-gradient(circle_at_82%_82%,rgba(0,0,0,0.12),transparent_42%)]"></div>
+                <div className="absolute inset-0 opacity-30 [background-image:repeating-linear-gradient(112deg,rgba(0,0,0,0.09)_0px,rgba(0,0,0,0.09)_2px,transparent_2px,transparent_26px),repeating-linear-gradient(-68deg,rgba(0,0,0,0.08)_0px,rgba(0,0,0,0.08)_2px,transparent_2px,transparent_32px)]"></div>
+                <div className="absolute inset-0 opacity-40 [background-image:repeating-linear-gradient(to_bottom,transparent_0px,transparent_43px,rgba(0,0,0,0.9)_43px,rgba(0,0,0,0.9)_44px)]"></div>
+                <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(0,0,0,0.9)_1px,transparent_1px)] [background-size:46px_46px]"></div>
             </div>
 
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -167,34 +169,18 @@ const Projects = () => {
                     transition={{ duration: 0.5 }}
                     className="mb-14"
                 >
-                    <p className="mb-4 inline-flex rotate-[-2deg] items-center gap-2 rounded-md border-2 border-white bg-white px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-black shadow-[0_8px_20px_rgba(0,0,0,0.35)]">
+                    <p className="mb-4 inline-flex rotate-[-2deg] items-center gap-2 rounded-md border-2 border-black/40 bg-[#fff4cc] px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-black shadow-[0_8px_20px_rgba(0,0,0,0.35)]">
                         Project Experience Lab
                     </p>
                     <h2 className="max-w-4xl text-4xl font-black leading-[0.95] sm:text-6xl">
                         A chaotic wall of products,
-                        <span className="text-cyan-300"> experiments, and engineering decisions.</span>
+                        <span className="text-[#0f3f84]"> experiments, and engineering decisions.</span>
                     </h2>
-                    <p className="mt-5 max-w-3xl text-base text-slate-300 sm:text-lg">
-                        Not a simple gallery. Every card is designed like a sticker board artifact: loud, tactile, and intentionally playful.
+                    <p className="mt-5 max-w-6xl text-base text-black/80 sm:text-lg">
+                        Not a simple gallery. Every card is a project that challenged me to solve problems, learn new skills, and
+                        deliver value. From web apps to automation bots, each sticker tells a story of creativity and technical growth.
                     </p>
                 </motion.div>
-
-                <div className="relative mb-10 overflow-hidden rounded-xl border border-white/15 bg-slate-900/60 py-3">
-                    <motion.div
-                        animate={{ x: ['0%', '-50%'] }}
-                        transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
-                        className="flex w-[200%] gap-4 pl-4"
-                    >
-                        {[...loopWords, ...loopWords, ...loopWords].map((word, i) => (
-                            <span
-                                key={`${word}-${i}`}
-                                className="shrink-0 rounded-full border border-white/20 bg-black/50 px-4 py-1 text-xs font-bold tracking-[0.2em] text-slate-200"
-                            >
-                                {word}
-                            </span>
-                        ))}
-                    </motion.div>
-                </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
                     {projects.map((project, index) => (
@@ -204,16 +190,15 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ duration: 0.35, delay: index * 0.04 }}
-                            whileHover={{ y: -8, rotate: index % 2 === 0 ? 0.55 : -0.55 }}
-                            className={`group relative isolate flex h-full flex-col overflow-hidden rounded-3xl border border-white/15 bg-slate-900/75 shadow-[0_18px_35px_rgba(0,0,0,0.38)] backdrop-blur-sm ${layoutVariants[index % layoutVariants.length]}`}
+                            whileHover={{ y: -7, rotate: index % 2 === 0 ? 0.9 : -0.9, scale: 1.01 }}
+                            className={`group relative isolate flex h-full flex-col overflow-hidden rounded-[26px] border-2 border-black/30 shadow-[0_14px_0_rgba(0,0,0,0.24),0_20px_35px_rgba(0,0,0,0.22)] ${stickerColors[index % stickerColors.length]} ${stickerAngles[index % stickerAngles.length]} ${layoutVariants[index % layoutVariants.length]}`}
                         >
-                            <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                                <div className="absolute -top-8 left-1/2 h-24 w-24 -translate-x-1/2 rounded-full bg-cyan-400/25 blur-2xl"></div>
-                            </div>
+                            <div className="pointer-events-none absolute left-6 top-[-10px] z-40 h-6 w-16 rounded-sm bg-white/55 shadow-sm backdrop-blur-sm"></div>
+                            <div className={`pointer-events-none absolute right-7 top-[-10px] z-40 h-6 w-14 rounded-sm bg-white/50 shadow-sm backdrop-blur-sm ${tapeAngles[index % tapeAngles.length]}`}></div>
 
                             <div className="pointer-events-none absolute -left-2 top-5 z-30">
                                 <div
-                                    className={`rounded-md border-2 border-white px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] shadow-[0_10px_18px_rgba(0,0,0,0.4)] ${stickerColors[index % stickerColors.length]}`}
+                                    className="rounded-md border-2 border-black/35 bg-white px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-black shadow-[0_8px_12px_rgba(0,0,0,0.22)]"
                                     style={{ transform: `rotate(${index % 2 === 0 ? -10 : 10}deg)` }}
                                 >
                                     Frame {String(index).padStart(2, '0')}
@@ -222,39 +207,39 @@ const Projects = () => {
 
                             <div className="pointer-events-none absolute right-3 top-[45%] z-30">
                                 <div
-                                    className="rounded-lg border-2 border-white bg-white px-2 py-1 text-[10px] font-black uppercase tracking-wider text-black shadow-[0_8px_15px_rgba(0,0,0,0.3)]"
+                                    className="rounded-lg border-2 border-black/30 bg-[#ffe36b] px-2 py-1 text-[10px] font-black uppercase tracking-wider text-black shadow-[0_8px_12px_rgba(0,0,0,0.25)]"
                                     style={{ transform: `rotate(${index % 2 === 0 ? 7 : -7}deg)` }}
                                 >
                                     {project.type}
                                 </div>
                             </div>
 
-                            <div className="relative h-48 overflow-hidden md:h-56">
+                            <div className="relative m-4 mb-0 overflow-hidden rounded-2xl border-2 border-black/25 bg-black/20 md:h-56">
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110 md:h-full"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent"></div>
-                                <div className="absolute bottom-3 right-4 text-5xl font-black tracking-tight text-white/10 md:text-7xl">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent"></div>
+                                <div className="absolute bottom-3 right-4 text-5xl font-black tracking-tight text-white/20 md:text-7xl">
                                     {String(index + 1).padStart(2, '0')}
                                 </div>
                             </div>
 
                             <div className="flex flex-1 flex-col p-5 md:p-6">
-                                <h3 className="text-xl font-black tracking-tight text-white md:text-2xl">{project.title}</h3>
-                                <p className="mt-2 text-sm text-slate-300">{project.description}</p>
+                                <h3 className="text-xl font-black tracking-tight text-black md:text-2xl">{project.title}</h3>
+                                <p className="mt-2 text-sm text-black/75">{project.description}</p>
 
-                                <div className="mt-4 rounded-xl border border-white/10 bg-black/35 p-3">
-                                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-300">Challenge</p>
-                                    <p className="mt-1 text-xs leading-relaxed text-slate-300">{project.problem}</p>
+                                <div className="mt-4 rounded-xl border-2 border-black/20 bg-white/45 p-3">
+                                    <p className="text-[10px] font-black uppercase tracking-[0.16em] text-black/60">Challenge</p>
+                                    <p className="mt-1 text-xs leading-relaxed text-black/75">{project.problem}</p>
                                 </div>
 
                                 <div className="mt-4 flex flex-wrap gap-2">
                                     {project.tech.map((tech) => (
                                         <span
                                             key={tech}
-                                            className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200"
+                                            className="rounded-full border border-black/25 bg-white/70 px-3 py-1 text-[11px] font-black uppercase tracking-wide text-black/80"
                                         >
                                             {tech}
                                         </span>
@@ -262,7 +247,7 @@ const Projects = () => {
                                 </div>
 
                                 <div className="mt-auto flex items-end justify-between pt-5">
-                                    <span className="inline-flex items-center gap-1 text-xs font-medium text-slate-400">
+                                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-black/65">
                                         <Layers size={14} /> {project.role}
                                     </span>
                                     <div className="flex items-center gap-2">
@@ -271,7 +256,7 @@ const Projects = () => {
                                                 href={project.github}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center gap-1 rounded-full border border-white/20 bg-black/40 px-3 py-1.5 text-xs font-semibold text-slate-200 transition-colors hover:border-white/40 hover:text-white"
+                                                className="inline-flex items-center gap-1 rounded-full border-2 border-black/30 bg-black px-3 py-1.5 text-xs font-bold text-white transition-colors hover:bg-black/85"
                                                 title="View Code"
                                             >
                                                 <Github size={14} /> Repo
@@ -282,7 +267,7 @@ const Projects = () => {
                                                 href={project.demo}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center gap-1 rounded-full border border-cyan-300/40 bg-cyan-400/10 px-3 py-1.5 text-xs font-semibold text-cyan-200 transition-colors hover:border-cyan-200 hover:text-cyan-100"
+                                                className="inline-flex items-center gap-1 rounded-full border-2 border-black/30 bg-[#0f3f84] px-3 py-1.5 text-xs font-bold text-white transition-colors hover:bg-[#0c3470]"
                                                 title="View Live"
                                             >
                                                 <ExternalLink size={14} /> Live
@@ -300,7 +285,7 @@ const Projects = () => {
                         href="https://github.com/JulianAlconcher"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-slate-100 transition-colors hover:border-cyan-300/60 hover:text-cyan-200"
+                        className="inline-flex items-center gap-2 rounded-full border-2 border-black/35 bg-[#fff0b3] px-6 py-3 text-sm font-black uppercase tracking-[0.12em] text-black transition-colors hover:bg-white"
                     >
                         Explore More on GitHub <ExternalLink size={16} />
                     </a>
