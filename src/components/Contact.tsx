@@ -18,7 +18,7 @@ const Contact = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         // Simulate form submission
-        alert('Mensaje enviado (simulación)');
+        alert('Message sent (simulation)');
         setFormData({ name: '', email: '', message: '' });
     };
 
@@ -26,9 +26,9 @@ const Contact = () => {
         <section id="contact" className="py-20 bg-slate-900 border-t border-slate-800 text-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4">¿Hablamos?</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4">Let's Talk</h2>
                     <p className="text-gray-400 text-lg">
-                        Estoy siempre interesado en discutir nuevos proyectos, oportunidades o simplemente charlar sobre tecnología.
+                        I'm always interested in discussing new projects, opportunities, or just talking about technology.
                     </p>
                 </div>
 
@@ -36,7 +36,7 @@ const Contact = () => {
 
                     {/* Contact Info */}
                     <div className="space-y-8">
-                        <h3 className="text-2xl font-bold text-white mb-6">Información de Contacto</h3>
+                        <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
 
                         <div className="space-y-6">
                             <a href="mailto:julian@example.com" className="flex items-center gap-4 text-gray-300 hover:text-blue-400 transition-colors group">
@@ -63,7 +63,7 @@ const Contact = () => {
 
                         <div className="pt-8 border-t border-slate-700/50 mt-8">
                             <p className="text-sm text-gray-400">
-                                Respondo generalmente dentro de las 24 horas.
+                                I usually respond within 24 hours.
                             </p>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ const Contact = () => {
                     {/* Contact Form */}
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Nombre</label>
+                            <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Name</label>
                             <input
                                 type="text"
                                 id="name"
@@ -80,7 +80,7 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-600"
-                                placeholder="Tu nombre"
+                                placeholder="Your name"
                             />
                         </div>
 
@@ -94,12 +94,12 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-600"
-                                placeholder="tu@email.com"
+                                placeholder="your@email.com"
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">Mensaje</label>
+                            <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">Message</label>
                             <textarea
                                 id="message"
                                 name="message"
@@ -108,7 +108,7 @@ const Contact = () => {
                                 required
                                 rows={4}
                                 className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-600 resize-none"
-                                placeholder="¿En qué puedo ayudarte?"
+                                placeholder="How can I help you?"
                             ></textarea>
                         </div>
 
@@ -116,7 +116,7 @@ const Contact = () => {
                             type="submit"
                             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 mt-4 shadow-lg shadow-blue-500/20"
                         >
-                            Enviar Mensaje <Send size={18} />
+                            Send Message <Send size={18} />
                         </button>
                     </form>
 

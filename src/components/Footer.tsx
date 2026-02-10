@@ -14,9 +14,9 @@ const Footer = () => {
     return (
         <footer className="bg-slate-950 py-12 text-center text-gray-500 text-sm border-t border-slate-900 relative">
             <div className="container mx-auto px-4 relative z-10">
-                <p>&copy; {new Date().getFullYear()} Julián Alconcher. Todos los derechos reservados.</p>
+                <p>&copy; {new Date().getFullYear()} Julian Alconcher. All rights reserved.</p>
                 <p className="mt-2 text-gray-600 italic">"The code is the law, but the logic is the engineering."</p>
-                <p className="mt-4">Desarrollado con React & Tailwind CSS.</p>
+                <p className="mt-4">Built with React & Tailwind CSS.</p>
             </div>
 
             {/* RJ45 Female Port (Switch Jack) - Target for the cable */}

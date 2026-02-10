@@ -14,11 +14,11 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: 'Inicio', href: '#home' },
-        { name: 'Proyectos', href: '#projects' },
-        { name: 'Sobre mí', href: '#about' },
+        { name: 'Home', href: '#home' },
+        { name: 'Projects', href: '#projects' },
+        { name: 'About', href: '#about' },
         { name: 'Skills', href: '#skills' },
-        { name: 'Contacto', href: '#contact' },
+        { name: 'Contact', href: '#contact' },
     ];
 
     return (

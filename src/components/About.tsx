@@ -11,15 +11,15 @@ const About = () => {
                     {/* Text Content */}
                     <div className="w-full md:w-1/2 space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Más que código, <span className="text-blue-500">Ingeniería</span>.
+                            More than code, <span className="text-blue-500">Engineering</span>.
                         </h2>
 
                         <p className="text-lg text-gray-300 leading-relaxed">
-                            Soy Julián, Ingeniero en Sistemas de Información con una pasión por construir software robusto y escalable. Mi enfoque no es solo escribir código que funcione, sino diseñar sistemas que perduren.
+                            I'm Julian, a Software Engineer passionate about building robust and scalable software. My approach is not only to write code that works, but to design systems that last.
                         </p>
 
                         <p className="text-lg text-gray-300 leading-relaxed">
-                            Combino una sólida formación académica con experiencia práctica en desarrollo full-stack. Me especializo en arquitecturas limpias, optimización de rendimiento y la entrega continua de valor.
+                            I combine a strong academic background with hands-on full-stack development experience. I specialize in clean architectures, performance optimization, and continuous value delivery.
                         </p>
 
                         <div className="grid grid-cols-2 gap-6 mt-8">
@@ -28,8 +28,8 @@ const About = () => {
                                     <Terminal size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="font-semibold text-white">Lógica Algorítmica</h4>
-                                    <p className="text-sm text-gray-400">Soluciones eficientes y optimizadas.</p>
+                                    <h4 className="font-semibold text-white">Algorithmic Thinking</h4>
+                                    <p className="text-sm text-gray-400">Efficient and optimized solutions.</p>
                                 </div>
                             </div>
 
@@ -38,8 +38,8 @@ const About = () => {
                                     <Cpu size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="font-semibold text-white">Arquitectura</h4>
-                                    <p className="text-sm text-gray-400">Diseño escalable y mantenible.</p>
+                                    <h4 className="font-semibold text-white">Architecture</h4>
+                                    <p className="text-sm text-gray-400">Scalable and maintainable design.</p>
                                 </div>
                             </div>
 
@@ -49,7 +49,7 @@ const About = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-white">Backend Lead</h4>
-                                    <p className="text-sm text-gray-400">APIs RESTful y Microservicios.</p>
+                                    <p className="text-sm text-gray-400">RESTful APIs and Microservices.</p>
                                 </div>
                             </div>
 
@@ -58,7 +58,7 @@ const About = () => {
                                     <Globe size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="font-semibold text-white">Frontend Moderno</h4>
+                                    <h4 className="font-semibold text-white">Modern Frontend</h4>
                                     <p className="text-sm text-gray-400">React, Next.js, UX/UI.</p>
                                 </div>
                             </div>
