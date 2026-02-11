@@ -154,14 +154,14 @@ const tapeAngles = ['rotate-[-10deg]', 'rotate-[8deg]', 'rotate-[-7deg]', 'rotat
 const Projects = () => {
     return (
         <section id="projects" className="relative overflow-hidden border-t border-black/20 bg-white py-28 text-black">
-            <div className="pointer-events-none absolute inset-x-0 top-0 z-[3] h-20 bg-gradient-to-b from-slate-950/40 to-transparent"></div>
-            <div className="pointer-events-none absolute inset-x-0 -top-20 z-[4] h-24 bg-white [clip-path:polygon(0_78%,100%_0,100%_100%,0_100%)] shadow-[0_1px_0_rgba(0,0,0,0.22)]"></div>
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-3 h-20 bg-linear-to-b from-slate-950/40 to-transparent"></div>
+            <div className="pointer-events-none absolute inset-x-0 -top-20 z-4 h-24 bg-white [clip-path:polygon(0_78%,100%_0,100%_100%,0_100%)] shadow-[0_1px_0_rgba(0,0,0,0.22)]"></div>
 
             <div className="pointer-events-none absolute inset-0">
-                <div className="absolute inset-0 opacity-35 [background-image:radial-gradient(circle_at_20%_18%,rgba(0,0,0,0.16),transparent_44%),radial-gradient(circle_at_78%_22%,rgba(0,0,0,0.14),transparent_42%),radial-gradient(circle_at_32%_76%,rgba(0,0,0,0.12),transparent_40%),radial-gradient(circle_at_82%_82%,rgba(0,0,0,0.12),transparent_42%)]"></div>
-                <div className="absolute inset-0 opacity-30 [background-image:repeating-linear-gradient(112deg,rgba(0,0,0,0.09)_0px,rgba(0,0,0,0.09)_2px,transparent_2px,transparent_26px),repeating-linear-gradient(-68deg,rgba(0,0,0,0.08)_0px,rgba(0,0,0,0.08)_2px,transparent_2px,transparent_32px)]"></div>
-                <div className="absolute inset-0 opacity-40 [background-image:repeating-linear-gradient(to_bottom,transparent_0px,transparent_43px,rgba(0,0,0,0.9)_43px,rgba(0,0,0,0.9)_44px)]"></div>
-                <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(0,0,0,0.9)_1px,transparent_1px)] [background-size:46px_46px]"></div>
+                <div className="absolute inset-0 opacity-35 bg-[radial-gradient(circle_at_20%_18%,rgba(0,0,0,0.16),transparent_44%),radial-gradient(circle_at_78%_22%,rgba(0,0,0,0.14),transparent_42%),radial-gradient(circle_at_32%_76%,rgba(0,0,0,0.12),transparent_40%),radial-gradient(circle_at_82%_82%,rgba(0,0,0,0.12),transparent_42%)]"></div>
+                <div className="absolute inset-0 opacity-30 bg-[repeating-linear-gradient(112deg,rgba(0,0,0,0.09)_0px,rgba(0,0,0,0.09)_2px,transparent_2px,transparent_26px),repeating-linear-gradient(-68deg,rgba(0,0,0,0.08)_0px,rgba(0,0,0,0.08)_2px,transparent_2px,transparent_32px)]"></div>
+                <div className="absolute inset-0 opacity-40 bg-[repeating-linear-gradient(to_bottom,transparent_0px,transparent_43px,rgba(0,0,0,0.9)_43px,rgba(0,0,0,0.9)_44px)]"></div>
+                <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,rgba(0,0,0,0.9)_1px,transparent_1px)] bg-size-[46px_46px]"></div>
             </div>
 
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -172,7 +172,7 @@ const Projects = () => {
                     transition={{ duration: 0.5 }}
                     className="mb-14"
                 >
-                    <p className="mb-4 inline-flex rotate-[-2deg] items-center gap-2 rounded-md border-2 border-black/40 bg-[#fff4cc] px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-black shadow-[0_8px_20px_rgba(0,0,0,0.35)]">
+                    <p className="mb-4 inline-flex -rotate-2 items-center gap-2 rounded-md border-2 border-black/40 bg-[#fff4cc] px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-black shadow-[0_8px_20px_rgba(0,0,0,0.35)]">
                         Project Experience Lab
                     </p>
                     <h2 className="max-w-4xl text-4xl font-black leading-[0.95] sm:text-6xl">The Projects Wall</h2>
@@ -193,8 +193,8 @@ const Projects = () => {
                             whileHover={{ y: -7, rotate: index % 2 === 0 ? 0.9 : -0.9, scale: 1.01 }}
                             className={`group relative isolate flex h-full flex-col overflow-hidden rounded-[26px] border-2 border-black/30 shadow-[0_14px_0_rgba(0,0,0,0.24),0_20px_35px_rgba(0,0,0,0.22)] ${stickerColors[index % stickerColors.length]} ${stickerAngles[index % stickerAngles.length]} ${layoutVariants[index % layoutVariants.length]}`}
                         >
-                            <div className="pointer-events-none absolute left-6 top-[-10px] z-40 h-6 w-16 rounded-sm bg-white/55 shadow-sm backdrop-blur-sm"></div>
-                            <div className={`pointer-events-none absolute right-7 top-[-10px] z-40 h-6 w-14 rounded-sm bg-white/50 shadow-sm backdrop-blur-sm ${tapeAngles[index % tapeAngles.length]}`}></div>
+                            <div className="pointer-events-none absolute left-6 -top-2.5 z-40 h-6 w-16 rounded-sm bg-white/55 shadow-sm backdrop-blur-sm"></div>
+                            <div className={`pointer-events-none absolute right-7 -top-2.5 z-40 h-6 w-14 rounded-sm bg-white/50 shadow-sm backdrop-blur-sm ${tapeAngles[index % tapeAngles.length]}`}></div>
 
                             <div className="pointer-events-none absolute -left-2 top-5 z-30">
                                 <div
@@ -220,7 +220,7 @@ const Projects = () => {
                                     alt={project.title}
                                     className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110 md:h-full"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent"></div>
+                                <div className="absolute inset-0 bg-linear-to-t from-black/55 via-black/20 to-transparent"></div>
                                 <div className="absolute bottom-3 right-4 text-5xl font-black tracking-tight text-white/20 md:text-7xl">
                                     {String(index + 1).padStart(2, '0')}
                                 </div>

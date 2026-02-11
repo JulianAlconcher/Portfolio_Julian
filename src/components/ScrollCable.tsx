@@ -38,6 +38,7 @@ const ScrollCable: React.FC = () => {
     // Audio helper using Web Audio API to simulate a classic RJ45 plastic click
     const playClickSound = useCallback(() => {
         try {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const AudioContextClass = (window.AudioContext || (window as any).webkitAudioContext);
             const audioCtx = new AudioContextClass();
 
@@ -84,7 +85,7 @@ const ScrollCable: React.FC = () => {
     });
 
     return (
-        <div className="fixed top-0 right-[60px] translate-x-1/2 z-[9999] pointer-events-none hidden lg:block overflow-visible">
+        <div className="fixed top-0 right-15 translate-x-1/2 z-9999 pointer-events-none hidden lg:block overflow-visible">
             {/* Organic Curved Cable using SVG */}
             <svg
                 width="60"
@@ -140,7 +141,7 @@ const ScrollCable: React.FC = () => {
                 }}
                 className="absolute top-0 left-1/2"
             >
-                <div className="relative mt-[0px]">
+                <div className="relative mt-0">
                     {/* Click Spark / Explosion / Glow */}
                     {hasConnected && (
                         <>
@@ -148,19 +149,19 @@ const ScrollCable: React.FC = () => {
                                 initial={{ scale: 0, opacity: 0 }}
                                 animate={{ scale: [1, 5], opacity: [0.9, 0] }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="absolute inset-0 bg-cyan-400 rounded-full blur-2xl z-[60]"
+                                className="absolute inset-0 bg-cyan-400 rounded-full blur-2xl z-60"
                             />
                             <motion.div
                                 initial={{ scale: 0, opacity: 0 }}
                                 animate={{ scale: [1, 8], opacity: [0.5, 0] }}
                                 transition={{ duration: 1, ease: "easeOut", delay: 0.05 }}
-                                className="absolute inset-0 border-4 border-cyan-300 rounded-full blur-md z-[60]"
+                                className="absolute inset-0 border-4 border-cyan-300 rounded-full blur-md z-60"
                             />
                             <motion.div
                                 initial={{ scale: 0, opacity: 0 }}
                                 animate={{ scale: [1, 4], opacity: [1, 0] }}
                                 transition={{ duration: 0.5, ease: "easeOut" }}
-                                className="absolute inset-0 bg-white rounded-full blur-lg z-[60]"
+                                className="absolute inset-0 bg-white rounded-full blur-lg z-60"
                             />
                         </>
                     )}

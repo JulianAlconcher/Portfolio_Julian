@@ -4,6 +4,7 @@ const Footer = () => {
     const [isConnected, setIsConnected] = useState(false);
 
     useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const handleConnection = (e: any) => {
             setIsConnected(e.detail.connected);
         };
@@ -22,26 +23,26 @@ const Footer = () => {
             {/* RJ45 Female Port (Switch Jack) - Target for the cable */}
             <div
                 id="rj45-port"
-                className="absolute -top-[28px] right-[60px] translate-x-1/2 hidden lg:block"
+                className="absolute -top-7 right-15 translate-x-1/2 hidden lg:block"
             >
-                <div className={`transition-colors duration-300 ${isConnected ? 'bg-slate-600 border-cyan-400' : 'bg-slate-700 border-slate-600'} border rounded-md shadow-lg p-[3px]`}>
+                <div className={`transition-colors duration-300 ${isConnected ? 'bg-slate-600 border-cyan-400' : 'bg-slate-700 border-slate-600'} border rounded-md shadow-lg p-0.75`}>
                     <div className="flex flex-col items-center">
                         {/* LEDs Row */}
                         <div className="flex gap-3 mb-1 px-1">
-                            <div className={`w-[5px] h-[5px] rounded-full transition-colors ${isConnected ? 'bg-green-400 animate-pulse shadow-[0_0_8px_rgba(34,211,238,1)]' : 'bg-green-900 shadow-none'}`}></div>
-                            <div className={`w-[5px] h-[5px] rounded-full transition-colors ${isConnected ? 'bg-amber-400 animate-fast-pulse shadow-[0_0_6px_rgba(245,158,11,1)]' : 'bg-amber-900 shadow-none'}`}></div>
+                            <div className={`w-1.25 h-1.25 rounded-full transition-colors ${isConnected ? 'bg-green-400 animate-pulse shadow-[0_0_8px_rgba(34,211,238,1)]' : 'bg-green-900 shadow-none'}`}></div>
+                            <div className={`w-1.25 h-1.25 rounded-full transition-colors ${isConnected ? 'bg-amber-400 animate-fast-pulse shadow-[0_0_6px_rgba(245,158,11,1)]' : 'bg-amber-900 shadow-none'}`}></div>
                         </div>
 
                         {/* The Port Opening */}
-                        <div className="w-[30px] h-[24px] bg-slate-900 rounded-sm border border-slate-800 relative flex flex-col items-center justify-start pt-[2px] overflow-hidden">
+                        <div className="w-7.5 h-6 bg-slate-900 rounded-sm border border-slate-800 relative flex flex-col items-center justify-start pt-0.5 overflow-hidden">
                             {/* Inner Pins detail */}
                             <div className="flex gap-[1.5px]">
                                 {[...Array(8)].map((_, i) => (
-                                    <div key={i} className={`w-[1px] h-[8px] transition-colors ${isConnected ? 'bg-amber-400' : 'bg-amber-600/30'}`}></div>
+                                    <div key={i} className={`w-px h-2 transition-colors ${isConnected ? 'bg-amber-400' : 'bg-amber-600/30'}`}></div>
                                 ))}
                             </div>
                             {/* Clip notch */}
-                            <div className="w-[10px] h-[4px] bg-slate-800 rounded-b-sm mt-auto mb-[1px]"></div>
+                            <div className="w-2.5 h-1 bg-slate-800 rounded-b-sm mt-auto mb-px"></div>
                         </div>
                     </div>
                 </div>

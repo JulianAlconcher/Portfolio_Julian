@@ -24,7 +24,7 @@ const Hero = () => {
                         repeat: Infinity,
                         ease: "linear"
                     }}
-                    className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[120px]"
+                    className="absolute top-1/4 left-1/4 w-125 h-125 bg-blue-600/30 rounded-full blur-[120px]"
                 />
 
                 <motion.div
@@ -38,7 +38,7 @@ const Hero = () => {
                         repeat: Infinity,
                         ease: "linear"
                     }}
-                    className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[140px]"
+                    className="absolute bottom-1/4 right-1/4 w-150 h-150 bg-purple-600/20 rounded-full blur-[140px]"
                 />
 
                 <motion.div
@@ -51,10 +51,10 @@ const Hero = () => {
                         repeat: Infinity,
                         ease: "linear"
                     }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px]"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-100 h-100 bg-emerald-500/10 rounded-full blur-[100px]"
                 />
 
-                <div className="absolute inset-0 bg-black/40 backdrop-blur-[4px] z-[-1]"></div>
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-xs z-[-1]"></div>
 
                 {/* Floating Linux Commands */}
                 <TerminalCommands />
@@ -77,7 +77,7 @@ const Hero = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.7, delay: 0.2 }}
-                        className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-100 via-white to-gray-300"
+                        className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-linear-to-r from-blue-100 via-white to-gray-300"
                     >
                         Julian Alconcher
                     </motion.h1>
@@ -321,11 +321,11 @@ const MiniLinuxTerminal = ({ onBlackoutChange }: MiniLinuxTerminalProps) => {
                 <div ref={outputRef} className="h-56 overflow-y-auto px-4 py-3 text-left font-mono text-[12px] md:text-sm">
                     <div className="mb-2 text-blue-200/85">
                         <span className="text-green-300">demo@linux:~$</span> {demoText}
-                        <span className="ml-0.5 inline-block h-4 w-[2px] animate-pulse bg-blue-200/90 align-middle"></span>
+                        <span className="ml-0.5 inline-block h-4 w-0.5 animate-pulse bg-blue-200/90 align-middle"></span>
                     </div>
 
                     {lines.map((line, index) => (
-                        <div key={`${line.type}-${index}`} className="mb-1 whitespace-pre-wrap break-words">
+                        <div key={`${line.type}-${index}`} className="mb-1 whitespace-pre-wrap wrap-break-word">
                             {line.type === 'command' ? (
                                 <span className="text-green-300">{line.text}</span>
                             ) : (
@@ -400,7 +400,7 @@ const TerminalCommands = () => {
     );
 
     return (
-        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden font-mono">
+        <div className="absolute inset-0 z-1 pointer-events-none overflow-hidden font-mono">
             {decorativeCommands.map((item) => (
                 <motion.div
                     key={item.id}

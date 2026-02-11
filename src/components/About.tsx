@@ -72,7 +72,7 @@ const About = () => {
                                 alt="Workspace"
                                 className="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
                             />
-                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-slate-900 to-transparent h-1/2"></div>
+                            <div className="absolute bottom-0 left-0 w-full bg-linear-to-t from-slate-900 to-transparent h-1/2"></div>
                         </div>
                         {/* Decorative elements */}
                         <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl"></div>
